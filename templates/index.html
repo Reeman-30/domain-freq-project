@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Deblurring Using Fourier Transform</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      h1,
+      h2 {
+        text-align: center;
+      }
+      form {
+        text-align: center;
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+      input[type="file"] {
+        margin-top: 10px;
+      }
+      button {
+        margin-top: 10px;
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 512px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Perbaikan Kualitas Citra pada Domain Frekuensi</h1>
+
+    <form action="/upload" method="post" enctype="multipart/form-data">
+      <label for="file">Upload gambar buram:</label>
+      <input type="file" id="file" name="file" accept="image/*" />
+      <button type="submit">Perbaiki Gambar</button>
+    </form>
+
+    <div class="result">
+      <h2>Sebelum:</h2>
+      <img src="{{ original }}" alt="Original Image" style="width: 512px" />
+      <h2>Sesudah:</h2>
+      <img src="{{ processed }}" alt="Processed Image" style="width: 512px" />
+    </div>
+  </body>
+</html>
